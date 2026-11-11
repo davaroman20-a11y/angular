@@ -1,0 +1,71 @@
+<h1>CONTROL DE INVENTARIO</h1>
+
+<form (ngSubmit)="registrar()" novalidate>
+
+  <label>Nombre del producto:</label>
+  <input
+    type="text"
+    [(ngModel)]="nombre"
+    name="nombre"
+    placeholder="Ingrese el producto"
+  >
+
+  <label>Cantidad:</label>
+  <input
+    type="number"
+    [(ngModel)]="cantidad"
+    name="cantidad"
+    placeholder="Ingrese la cantidad"
+    min="0"
+    step="1"
+  >
+
+  <label>Precio:</label>
+  <input
+    type="number"
+    [(ngModel)]="precio"
+    name="precio"
+    placeholder="Ingrese el precio"
+    min="0"
+    step="any"
+  >
+
+  <button type="submit">Registrar producto</button>
+
+</form>
+
+<p>{{ mensaje }}</p>
+
+<h2>LISTA DE INVENTARIO</h2>
+
+<div class="lista">
+
+  @for (producto of productos; track $index) {
+
+    <div class="producto">
+
+      <h3>{{ producto.nombre }}</h3>
+
+      <p>Cantidad: {{ producto.cantidad }}</p>
+
+      <p>Precio: ${{ producto.precio }}</p>
+
+      <p>
+        Valor total: ${{ valorTotal(producto) }}
+      </p>
+
+      <button
+        type="button"
+        (click)="eliminar($index)">
+        Eliminar
+      </button>
+
+    </div>
+
+  } @empty {
+
+    <p>No hay productos registrados.</p>
+
+  }
+
+</div>

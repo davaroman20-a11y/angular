@@ -1,8 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Calculadora } from './calculadora/calculadora';
+import { Catalogo } from './catalogo/catalogo';
+import { Registro } from './registros/registros';
+import { Semaforo } from './semaforo/semaforo';
+import { Inventario } from './inventario/inventario';
+
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [Calculadora, Catalogo, Registro, Semaforo, Inventario],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

@@ -1,0 +1,20 @@
+<h1>Registro de Estudiantes</h1>
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" [(ngModel)]="nombre">
+<br>
+<label for="apellido">Apellido:</label>
+<input type="text" id="apellido" name="apellido" [(ngModel)]="apellido">
+<br>
+<label for="programa">Programa:</label>
+<input type="text" id="programa" name="programa" [(ngModel)]="programa">
+<br>
+<label for="edad">Edad:</label>
+<input type="number" id="edad" name="edad" [(ngModel)]="edad">
+<br>
+<button (click)="registrarEstudiante()">Registrar</button>
+<h1>Lista de Estudiantes Registrados</h1>
+<ul>
+  <li *ngFor="let estudiante of estudiantes">
+    {{ estudiante.nombre }} {{ estudiante.apellido }} - {{ estudiante.programa }} - {{ estudiante.edad }}
+  </li>
+</ul>

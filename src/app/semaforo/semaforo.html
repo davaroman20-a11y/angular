@@ -1,0 +1,22 @@
+<h1>SEMÁFORO INTERACTIVO</h1>
+
+<div class="botones">
+
+  <button (click)="rojo()">Rojo</button>
+
+  <button (click)="amarillo()">Amarillo</button>
+
+  <button (click)="verde()">Verde</button>
+
+</div>
+
+<div class="semaforo">
+
+  <div
+    class="circulo"
+    [style.backgroundColor]="color">
+  </div>
+
+</div>
+
+<h2>{{ mensaje }}</h2>
